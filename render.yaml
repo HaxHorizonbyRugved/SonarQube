@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: sonarqube
+    env: docker
+    plan: standard
+    disk:
+      name: sonar-data
+      mountPath: /opt/sonarqube/data
+      sizeGB: 10
+    envVars:
+      - key: SONAR_JDBC_URL
+        value: jdbc:postgresql://dpg-d0kmjvruibrs739lfva0-a.oregon-postgres.render.com/sonarqube_db_9j5j
+      - key: SONAR_JDBC_USERNAME
+        value: sonarqube_db_9j5j_user
+      - key: SONAR_JDBC_PASSWORD
+        value: xCeOJytc3AWFS0VnKQCPzCwtYDo2hTGv
